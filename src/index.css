@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-outfit min-h-screen selection:bg-primary selection:text-background;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-plus tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-drama {
+    @apply font-cormorant italic font-medium;
+  }
+
+  .font-data {
+    @apply font-ibm;
+  }
+
+  /* Magnetic Button Hover Setup */
+  .btn-magnetic {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-full transition-transform duration-500;
+    transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .btn-magnetic:hover {
+    transform: scale(1.03) translateY(-1px);
+  }
+
+  .glass-nav {
+    @apply bg-background/60 backdrop-blur-xl border border-primary/10 shadow-sm;
+  }
+
+  .animate-spin-slow {
+    animation: spin 15s linear infinite;
+  }
+
+  .animate-scan {
+    animation: scan 3s ease-in-out infinite;
+  }
+
+  @keyframes scan {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(180px);
+    }
+  }
+
+  .animate-pulse-draw {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: pulse-draw 4s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite alternate;
+  }
+
+  @keyframes pulse-draw {
+    0% {
+      stroke-dashoffset: 600;
+      opacity: 0.2;
+    }
+
+    50% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 0.2;
+    }
+  }
+}
+
+
+/* Global SVG Noise Overlay */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.05;
+}
