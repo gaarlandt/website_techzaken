@@ -164,7 +164,7 @@ const Features = () => {
       .to(cursorRef.current, { opacity: 1, duration: 0.3 })
       .to(cursorRef.current, { x: 80, y: 40, duration: 1 })
       .to(cursorRef.current, { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1 })
-      .to('.day-target', { backgroundColor: '#2563eb', color: '#ffffff', duration: 0.2 }, "-=0.1")
+      .to('.day-target', { backgroundColor: '#d4a373', color: '#ffffff', duration: 0.2 }, "-=0.1")
       .to(cursorRef.current, { x: 180, y: 120, duration: 1 })
       .to(cursorRef.current, { opacity: 0, duration: 0.3 })
       .to('.day-target', { backgroundColor: 'transparent', color: 'inherit', duration: 0.2, delay: 0.5 });
